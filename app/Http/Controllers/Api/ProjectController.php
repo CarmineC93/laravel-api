@@ -10,7 +10,10 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
+        // $projects = Project::all();
+
+        $projects = Project::with('type', 'technologies')->get();
+        // in with() i parametri sono singolare o plurale a seconda della relazione che intercorre tra le tabelle
         return response()->json([
             'success' => true,
             'results' => $projects
