@@ -12,7 +12,9 @@ class ProjectController extends Controller
     {
         // $projects = Project::all();
 
-        $projects = Project::with('type', 'technologies')->get();
+        // $projects = Project::with('type', 'technologies')->get();
+        $projects = Project::with('type', 'technologies')->paginate(5);
+
         // in with() i parametri sono singolare o plurale a seconda della relazione che intercorre tra le tabelle
         return response()->json([
             'success' => true,
