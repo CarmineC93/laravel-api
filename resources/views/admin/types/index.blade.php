@@ -3,7 +3,6 @@
 @section('content')
     <div class="container">
         <h2 class="mt-3 text-center">La lista dei tipi di progetto</h2>
-        @include('partials.messages')
         <div class="row justify-content-between">
             <div class="col-5">
                 <form action="{{ route('admin.types.store') }}" method="POST" class="mt-3">
@@ -30,7 +29,7 @@
                             <tr>
                                 <th scope="row">
                                     <form id="edit-type-{{ $type->id }}"
-                                        action="{{ route('admin.categories.update', $type->slug) }}" method="POST">
+                                        action="{{ route('admin.types.update', $type->slug) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <input type="text" name="name" id="name" class="form-control border-0"
