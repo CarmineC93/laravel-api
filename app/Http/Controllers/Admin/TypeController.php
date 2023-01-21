@@ -25,7 +25,7 @@ class TypeController extends Controller
     public function store(Request $request)
     {
         $val_data = $request->validate([
-            'name' => ['required', 'unique:tyes']
+            'name' => ['required', 'unique:types']
         ]);
         $val_data['slug'] = Str::slug($val_data['name'], '-');
         $type = Type::create($val_data);

@@ -9,6 +9,8 @@ class Type extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug'];
+
     //nome della funzione plurale perche in un tipo si possono avere piu progetti
     public function projects()
     {
