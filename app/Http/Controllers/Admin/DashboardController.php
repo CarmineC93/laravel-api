@@ -11,7 +11,7 @@ class DashboardController extends Controller
     // funzione che rimanda alla pagina index
     public function index()
     {
-        Auth::user()->user;
-        return view('admin.dashboard');
+        $users = Auth::user();
+        return view('admin.dashboard', compact('users'));
     }
 }

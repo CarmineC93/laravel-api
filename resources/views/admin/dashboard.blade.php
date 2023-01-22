@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        Hello {{ Auth::user()->user }}
+                        Hello <span class="text-danger"> {{ $users->name }} </span>
                         {{ __('You are logged in!') }}
                     </div>
                 </div>
