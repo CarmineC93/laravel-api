@@ -45,6 +45,6 @@ class TypeController extends Controller
     public function destroy(Type $type)
     {
         $type->delete();
-        return redirect()->back()->with('message', "Tipo $type->name è stata cancellata");
+        return redirect()->back()->with('message', "Tipo $type->name è stato cancellato");
     }
 }

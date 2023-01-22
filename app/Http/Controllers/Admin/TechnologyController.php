@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Technology;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class TechnologyController extends Controller
 {
@@ -16,7 +18,8 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+        $types = Technology::all();
+        return view('admin.technologies.index', compact('technologies'));
     }
 
     /**
@@ -37,7 +40,12 @@ class TechnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $val_data = $request->validate([
+            'name' => ['required', 'unique:technologies']
+        ]);
+        $val_data['slug'] = Str::slug($val_data['name'], '-');
+        $technology = Technology::create($val_data);
+        return redirect()->back()->with('message', "tecnologia $technology->name è stato creato con successo");
     }
 
     /**
@@ -48,7 +56,7 @@ class TechnologyController extends Controller
      */
     public function show(Technology $technology)
     {
-        //
+        return view('admin.types.show', compact('type'));
     }
 
     /**
@@ -71,7 +79,12 @@ class TechnologyController extends Controller
      */
     public function update(Request $request, Technology $technology)
     {
-        //
+        $val_data = $request->validate([
+            'name' => ['required', Rule::unique('types')->ignore($technology)]
+        ]);
+        $val_data['slug'] = Str::slug($val_data['name']);
+        $technology->update($val_data);
+        return redirect()->back()->with('message', "Tipo $technology->name è stata aggiornata con successo");
     }
 
     /**
@@ -82,6 +95,7 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
-        //
+        $technology->delete();
+        return redirect()->back()->with('message', "Tecnologia $technology->name è stata cancellata");
     }
 }
