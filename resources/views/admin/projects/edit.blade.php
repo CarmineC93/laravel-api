@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <h2 class="text-center">Modifica {{ $project->title }}</h2>
+    <div class="container text-light">
+        <h2 class="text-center text-light">Modifica {{ $project->title }}</h2>
         <div class="row justify-content-center">
             <div class="col-8">
                 @include('partials.errors')

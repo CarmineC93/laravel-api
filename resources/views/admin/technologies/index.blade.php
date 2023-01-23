@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container text-white">
         <h2 class="mt-3 text-center">La lista delle tecnologie di progetto</h2>
         <div class="row justify-content-between">
             <div class="col-5">

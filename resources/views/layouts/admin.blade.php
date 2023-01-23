@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div style="height: 100vh">
+    <div style="height: 100vh" class="bg-dark">
         {{-- Header --}}
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow"
             style="border-bottom: 1px solid white; height: 50px">
@@ -48,9 +48,9 @@
         </header>
         {{-- /Header --}}
 
-        <div class="container-fluid bg-dark" style="height: calc(100% - 50px)">
+        <div class="container-fluid bg-dark">
 
-            <div class="row ">
+            <div class="row " style="height: calc(100% - 50px)">
                 {{-- Sidebar --}}
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse"
                     style="border-right: 1px solid white; scroll:auto;">

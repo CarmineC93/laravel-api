@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container mt-4">
-        <h3 class="text-center">La lista dei miei progetti</h3>
+        <h3 class="text-center text-light">La lista dei miei progetti</h3>
         <div class="text-end">
-            <a class="btn btn-success" href="{{ route('admin.projects.create') }}">
+            <a class="btn btn-success text-light" href="{{ route('admin.projects.create') }}">
                 Nuovo Progetto
             </a>
         </div>
@@ -18,7 +18,7 @@
                     </div>
                 @endif
 
-                <table class="table">
+                <table class="table text-light">
                     <thead>
                         <tr>
                             <th scope="col">Titolo</th>

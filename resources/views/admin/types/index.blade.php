@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="mt-3 text-center">La lista dei tipi di progetto</h2>
+        <h2 class="mt-3 text-center text-white">La lista dei tipi di progetto</h2>
         <div class="row justify-content-between">
             <div class="col-5">
                 <form action="{{ route('admin.types.store') }}" method="POST" class="mt-3">
@@ -16,7 +16,7 @@
                 </form>
             </div>
             <div class="col-6">
-                <table class="table mt-3">
+                <table class="table mt-3 text-white">
                     <thead>
                         <tr>
                             <th scope="col">Tipo</th>
@@ -56,7 +56,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <p>Nessun tipo presente</p>
+                            <p class="text-white">Nessun tipo presente</p>
                         @endforelse
 
                     </tbody>

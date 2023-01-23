@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container text-white">
         <h2 class="text-center">{{ $type->name }}</h2>
         <p><strong>Slug: </strong>{{ $type->slug }}</p>
         <h4>Progetti:</h4>
