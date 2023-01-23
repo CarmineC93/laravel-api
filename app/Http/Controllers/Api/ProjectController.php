@@ -24,6 +24,21 @@ class ProjectController extends Controller
 
     public function show($slug)
     {
-        $project = Project::where('slug', $slug)
+        $project = Project::with('type', 'technologies')->where('slug', $slug)->first();
+
+        // se c'è almeno un project ritorno il/i project stesso/i
+
+        if ($project) {
+            return response()->json([
+                'success' => true,
+                'project' => $project,
+            ]);
+        } else {
+            //altrimenti ritorno un messaggio di errore
+            return response()->json([
+                'success' => true,
+                'error' => 'Nessun progetto corrispondente',
+            ]);
+        }
     }
 }
