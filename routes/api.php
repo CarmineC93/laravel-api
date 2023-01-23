@@ -20,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/projects', [ProjectController::class, 'index']);
-// ovviamente il ProjectController è quello di Api
+// il ProjectController è quello in cartella Api
+Route::get('/projects/{slug}', [ProjectController::class, 'show']);
