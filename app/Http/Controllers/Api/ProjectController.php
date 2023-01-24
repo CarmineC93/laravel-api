@@ -26,7 +26,7 @@ class ProjectController extends Controller
     {
         $project = Project::with('type', 'technologies')->where('slug', $slug)->first();
 
-        // se c'è almeno un project ritorno il/i project stesso/i
+        // se nell'api c'è almeno un project rispondente alla chiamata con il where ritorno il/i project stesso/i
 
         if ($project) {
             return response()->json([
