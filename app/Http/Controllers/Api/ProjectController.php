@@ -8,12 +8,20 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $projects = Project::all();
 
-        // $projects = Project::with('type', 'technologies')->get();
-        $projects = Project::with('type', 'technologies')->paginate(5);
+        //se nel request c'è type_id seleziono i project dal database del type corrispondente al filtro
+        if ($request->has('type_id')) {
+            // $projects = Project::with('type', 'technologies')->get();
+            $projects = Project::with('type', 'technologies')
+                ->where('type_id', $request->type_id)->paginate(5);
+        } else {
+            //altrimenti seleziono tutti i projects
+            $projects = Project::with('type', 'technologies')->paginate(5);
+        }
+
 
         // in with() i parametri sono singolare o plurale a seconda della relazione che intercorre tra le tabelle
         return response()->json([
