@@ -23,7 +23,7 @@
                         <tr>
                             <th scope="col">Titolo</th>
                             <th scope="col">Tipo</th>
-
+                            <th scope="col">Anteprima</th>
                             <th scope="col">Azioni</th>
                         </tr>
                     </thead>
