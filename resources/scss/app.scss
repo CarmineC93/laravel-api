@@ -1,2 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+
+tbody{
+    tr {
+        background-color: rgb(41, 40, 40);
+        height: 100px;
+        max-height: 100px;
+        img{
+            height: 70px;
+            width: 70px;
+        }
+
+    }
+
+}

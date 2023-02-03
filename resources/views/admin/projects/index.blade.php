@@ -36,7 +36,7 @@
                                 <td>
                                     @if ($project->cover_image)
                                         <img id="image_preview" src="{{ asset('storage/' . $project->cover_image) }}"
-                                            alt="project cover" style="max-width:100px">
+                                            alt="project cover">
                                     @else
                                     @endif
                                 </td>
