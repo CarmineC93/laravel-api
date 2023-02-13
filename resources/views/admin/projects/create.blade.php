@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center mt-3 text-light">Crea un nuovo progetto</h2>
+        <h2 class="text-center mt-3 text-light">Create a new Project</h2>
         <div class="row justify-content-center">
             <div class="col-8">
 
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <h4>technologies</h4>
+                        <h4>Technologies</h4>
                         @foreach ($technologies as $technology)
                             <div class="form-check">
                                 {{-- 'value' deve contenere i'id da salvare che alla selezione del checkbox viene salvato tramite il 'name' nell'array collection [technologies], array che è nella tabella ponte project-technology (non nella tabella posts!) --}}
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="type">Categoria</label>
+                        <label for="type">Categories</label>
                         {{-- il 'name' del select deve essere come il nome della colonna --}}
                         <select name="type_id" id="type" class="form-select">
                             <option value="">Nessun tipo</option>
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="cover_image">Immagine</label>
+                        <label for="cover_image">Image</label>
                         <input type="file" name="cover_image" id="cover_image"
                             class="form-control
                             @error('cover_image')
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="content">Descrizione</label>
+                        <label for="content">Description</label>
                         <textarea name="content" id="content" rows="10"
                             class="form-control @error('content')
                         is-invalid
@@ -83,7 +83,7 @@
                         @enderror
                     </div>
 
-                    <button class="btn btn-success" type="submit">Salva</button>
+                    <button class="btn btn-success" type="submit">Save</button>
                 </form>
             </div>
         </div>
